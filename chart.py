@@ -36,7 +36,7 @@ def make_chart(numbers):
     x_values = list(range(2, 13))
     ax.set_xlim(1, 13)
     ax.set_ylim(0, 7 / 36)
-    #ax.set_xticks(x_values)
+    ax.set_xticks([])
     #ax.set_xticklabels(x_values, fontsize=19, color='white', fontname='Cooper Black')
     ax.tick_params(axis='x', which='both', length=0)
     ax.tick_params(axis='y', which='both', left=False, right=False, labelleft=False)
