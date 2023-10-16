@@ -7,6 +7,9 @@ from chart import make_chart, background_image
 # Display the title
 st.title("Nel Catan ci vuole Culo")
 
+with open("data.txt", "r") as f:
+    numbers = f.readlines()
+    
 cols = st.columns(7)
 for i in range(2):
     for j in range(6):
@@ -20,10 +23,6 @@ for i in range(2):
                 with open("data.txt", "a") as f:
                     f.write(f"{n}\n")
 
-
-# Load all numbers from the text file and display a histogram
-with open("data.txt", "r") as f:
-    numbers = f.readlines()
 numbers = [int(n.strip()) for n in numbers]
 if len(numbers) > 10:
     cols[6].write('# {:.0f}%'.format(get_p_value(numbers)*100))
