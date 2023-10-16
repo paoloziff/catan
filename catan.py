@@ -15,6 +15,8 @@ for i in range(2):
             if n == 1:
                 st.success("A'ncefalitico, guarda che non può uscì l'uno...")
             else:
+                if n == 7:
+                    autoplay_audio("la bela la va al fosso.mp3")
                 with open("data.txt", "a") as f:
                     f.write(f"{n}\n")
 
