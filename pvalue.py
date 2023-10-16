@@ -34,7 +34,7 @@ def autoplay_audio(file_path: str):
             """
         st.markdown(md, unsafe_allow_html=True)
 
-def is_special(n, p):
+def is_special(n, p, series):
     if len(p) > 1:
         input_list = p[-2:].append(n)
         # Check if the input list contains the same number three times
