@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 from pvalue import get_p_value, autoplay_audio
 from chart import make_chart, background_image
 
-background_image("background.png")
-
 # Display the title
 st.title("Nel Catan ci vuole Culo")
 
@@ -37,3 +35,5 @@ if st.button("Clear All Data"):
     with open("data.txt", "w") as f:
         f.write("")
     st.success("All data has been cleared!")
+
+background_image("background.png")
