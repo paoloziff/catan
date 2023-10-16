@@ -31,7 +31,7 @@ def make_chart(numbers):
     y_line = [1 / 36, 1 / 6, 1 / 36]
     ax.plot(x_line, y_line, color='red', linewidth=4, zorder=1)
 
-    ax.bar(df.x, df.y, color='orange', width=0.7, zorder=2, font='Cooper Black Regular')
+    ax.bar(df.x, df.y, color='orange', width=0.7, zorder=2, fontname='Cooper Black Regular')
 
     x_values = list(range(2, 13))
     ax.set_xlim(1, 13)
