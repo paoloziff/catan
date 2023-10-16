@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from pvalue import get_p_value, autoplay_audio
 from chart import make_chart
 
+background_image("background.png")
+
 # Display the title
 st.title("Nel Catan ci vuole Culo")
 
