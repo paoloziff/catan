@@ -8,7 +8,7 @@ from chart import make_chart, background_image
 st.title("Nel Catan ci vuole Culo")
 
 with open("data.txt", "r") as f:
-    numbers = f.readlines()
+    p_numbers = f.readlines()
     
 cols = st.columns(7)
 for i in range(2):
@@ -18,11 +18,15 @@ for i in range(2):
             if n == 1:
                 st.success("A'ncefalitico, guarda che non può uscì l'uno...")
             else:
-                if n == 7:
+                if is_special(n,p_numbers):
+                    pass
+                elif n == 7:
                     autoplay_audio("audios/la bela la va al fosso.mp3")
                 with open("data.txt", "a") as f:
                     f.write(f"{n}\n")
 
+with open("data.txt", "r") as f:
+    numbers = f.readlines()
 numbers = [int(n.strip()) for n in numbers]
 if len(numbers) > 10:
     cols[6].write('# {:.0f}%'.format(get_p_value(numbers)*100))
