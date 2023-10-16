@@ -60,7 +60,7 @@ def background_image(png_file):
     body {
     background-image: url("data:image/png;base64,%s");
     background-size: cover;
-    opacity: 0.8;
+    opacity: 0.85;
     }
     </style>
     ''' % bin_str
