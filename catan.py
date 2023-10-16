@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from pvalue import get_p_value, autoplay_audio
-from chart import make_chart
+from chart import make_chart, backround_image
 
 background_image("background.png")
 
