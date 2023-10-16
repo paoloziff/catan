@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 
 
 def create_data(numbers):
@@ -18,6 +19,9 @@ def create_data(numbers):
 def make_chart(numbers):
     df = create_data(numbers)
 
+    font_manager.fontManager.addfont('Cooper Black Regular.ttf')
+    plt.rcParams['font.family'] = 'Cooper Black Regular'
+    
     # Create the fig and ax objects
     fig, ax = plt.subplots()
     ax.set_facecolor('none')
