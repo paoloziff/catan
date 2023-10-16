@@ -1,7 +1,8 @@
 import streamlit as st
+import random
 import pandas as pd
 import matplotlib.pyplot as plt
-from pvalue import get_p_value, autoplay_audio
+from pvalue import get_p_value, autoplay_audio, is_special, roll_two_dice
 from chart import make_chart, background_image
 
 # Display the title
@@ -9,6 +10,7 @@ st.title("Nel Catan ci vuole Culo")
 
 with open("data/data.txt", "r") as f:
     p_numbers = f.readlines()
+p_numbers = [int(n.strip()) for n in p_numbers]
 
 with open("data/series.txt", 'r') as file:
     series = [[int(num) for num in line.split()] for line in file]
@@ -40,6 +42,10 @@ st.image('media/xlabels.png', use_column_width='auto')
 if st.button("Clear All Data"):
     with open("data/data.txt", "w") as f:
         f.write("")
+    with open("data/series.txt", 'w') as file:
+        for _ in range(4):  # for each of the 4 rows
+            numbers = [str(roll_two_dice()) for _ in range(3)]
+            file.write(' '.join(numbers) + '\n')
     st.success("All data has been cleared!")
 
 background_image("media/background.png")
