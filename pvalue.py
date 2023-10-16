@@ -39,10 +39,10 @@ def is_special(n, p, series):
         input_list = p[-2:].append(n)
         # Check if the input list contains the same number three times
         if len(set(input_list)) == 1:
-            autoplay_audio("audios/gnomo3.mp3")
+            autoplay_audio("media/gnomo3.mp3")
             st.success("Pesca due carte che vuoi")                           
         # Check if the input list matches an item in the series list
         elif input_list in series:
-            autoplay_audio("audios/gnomo3.mp3")
+            autoplay_audio("media/gnomo3.mp3")
             st.success("Pesca quattro carte che vuoi") 
         
