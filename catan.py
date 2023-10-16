@@ -27,8 +27,7 @@ if len(numbers) > 10:
     cols[6].write('# {:.0f}%'.format(get_p_value(numbers)*100))
 
 st.pyplot(make_chart(numbers))
-colss = st.columns(3)
-colss[1].image('xlabels.png', use_column_width=False)
+st.image('xlabels.png', use_column_width=False)
 # Add a button to clear all the data
 if st.button("Clear All Data"):
     with open("data.txt", "w") as f:
