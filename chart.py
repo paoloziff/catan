@@ -31,13 +31,13 @@ def make_chart(numbers):
     y_line = [1 / 36, 1 / 6, 1 / 36]
     ax.plot(x_line, y_line, color='red', linewidth=4, zorder=1)
 
-    ax.bar(df.x, df.y, color='orange', width=0.7, zorder=2, fontname='Cooper Black Regular')
+    ax.bar(df.x, df.y, color='orange', width=0.7, zorder=2)
 
     x_values = list(range(2, 13))
     ax.set_xlim(1, 13)
     ax.set_ylim(0, 7 / 36)
     ax.set_xticks(x_values)
-    ax.set_xticklabels(x_values, fontsize=19, color='white')
+    ax.set_xticklabels(x_values, fontsize=19, color='white', fontname='Cooper Black Regular')
     ax.tick_params(axis='x', which='both', length=0)
     ax.tick_params(axis='y', which='both', left=False, right=False, labelleft=False)
 
