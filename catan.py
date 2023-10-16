@@ -10,7 +10,7 @@ st.title("Nel Catan ci vuole Culo")
 with open("data/data.txt", "r") as f:
     p_numbers = f.readlines()
 
-with open(filename, 'r') as file:
+with open("data/series.txt", 'r') as file:
     series = [[int(num) for num in line.split()] for line in file]
     
 cols = st.columns(7)
