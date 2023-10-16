@@ -18,7 +18,7 @@ for i in range(2):
             if n == 1:
                 st.success("A'ncefalitico, guarda che non può uscì l'uno...")
             else:
-                if is_special(n,p_numbers):
+                if is_special(n,p_numbers, series):
                     pass
                 elif n == 7:
                     autoplay_audio("audios/la bela la va al fosso.mp3")
