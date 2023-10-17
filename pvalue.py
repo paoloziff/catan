@@ -25,7 +25,9 @@ def get_p_value(outcomes):
     chi2, p = chisquare(observed, expected)
     return p
 
+
 def autoplay_audio(file_path: str):
+    file_path = 'media/' + file_path + '.mp3'
     with open(file_path, "rb") as f:
         data = f.read()
         b64 = base64.b64encode(data).decode()
@@ -36,20 +38,24 @@ def autoplay_audio(file_path: str):
             """
         st.markdown(md, unsafe_allow_html=True)
 
+
 def is_special(n, p, series):
     if len(p) > 1:
         input_list = p[-2:]
         input_list.append(n)
         # Check if the input list contains the same number three times
         if len(set(input_list)) == 1:
-            autoplay_audio("media/gnomo_cut3.mp3")
-            time.sleep(3)
-            st.success("### 👍Pesca due carte che vuoi🍀")                           
-        # Check if the input list matches an item in the series list
-        elif input_list in series:
-            autoplay_audio("media/gnomo_cut2.mp3")
+            autoplay_audio("gnomo_cut2")
             time.sleep(3.35)
-            st.success("### 🍻🎉🤩Pesca quattro carte che vuoi🥳🎊🍻") 
+            st.success("## 🎇🎰😍Pesca QUATTRO carte che vuoi🤩🎰🎆")
+        # Check if the input list matches an item in the series list
+        elif input_list in series[:10]:
+            autoplay_audio("fortnite")
+            st.success("## 🍻🎉🤩Pesca tre carte che vuoi🥳🎊🍻")
+        elif input_list in series[10:]:
+            autoplay_audio("gnomo_cut3")
+            time.sleep(2)
+            st.success("### 🤑Pesca una carta a piacere🍀")
         
 
 def roll_two_dice():
