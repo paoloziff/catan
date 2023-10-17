@@ -47,11 +47,11 @@ def is_special(n, p, series):
         if len(set(input_list)) == 1:
             autoplay_audio("gnomo_cut2")
             time.sleep(3.35)
-            st.success("## 🎇🎰😍Pesca QUATTRO carte che vuoi🤩🎰🎆")
+            st.success("## 🎰😍Pesca QUATTRO carte che vuoi🤩🎰")
         # Check if the input list matches an item in the series list
         elif input_list in series[:10]:
             autoplay_audio("fortnite")
-            st.success("## 🍻🎉🤩Pesca tre carte che vuoi🥳🎊🍻")
+            st.success("## 🍻🎉Pesca tre carte che vuoi🎊🍻")
         elif input_list in series[10:]:
             autoplay_audio("gnomo_cut3")
             time.sleep(2)
