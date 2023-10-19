@@ -40,6 +40,7 @@ def autoplay_audio(file_path: str):
 
 
 def is_special(n, p, series):
+    verdict = False
     if len(p) > 1:
         input_list = p[-2:]
         input_list.append(n)
@@ -48,14 +49,18 @@ def is_special(n, p, series):
             autoplay_audio("gnomo_cut2")
             time.sleep(3.35)
             st.success("## 🎰😍Pesca QUATTRO carte che vuoi🤩🎰")
+            verdict = True
         # Check if the input list matches an item in the series list
         elif input_list in series[:10]:
             autoplay_audio("fortnite")
             st.success("## 🍻🎉Pesca tre carte che vuoi🎊🍻")
+            verdict = True
         elif input_list in series[10:]:
             autoplay_audio("gnomo_cut3")
             time.sleep(2)
             st.success("### 🤑Pesca una carta a piacere🍀")
+            verdict = True
+    return verdict
         
 
 def roll_two_dice():
