@@ -7,7 +7,10 @@ from pvalue import get_p_value, autoplay_audio, is_special, roll_two_dice
 from chart import make_chart, background_image
 
 # Display the title
-st.title("Nel Catan ci vuole Culo")
+cs = st.columns([0.8, 0.2])
+cs[0].write('## Nel Catan ci vuole Culo')
+if cs[1].button('Reset'):
+    st.write('R')
 
 with open("data/data.txt", "r") as f:
     p_numbers = f.readlines()
