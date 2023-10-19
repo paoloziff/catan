@@ -10,7 +10,7 @@ from chart import make_chart, background_image
 cs = st.columns([0.8, 0.2])
 cs[0].write('## Nel Catan ci vuole Culo')
 if cs[1].button('Reset'):
-    st.write('R')
+    pass
 
 with open("data/data.txt", "r") as f:
     p_numbers = f.readlines()
