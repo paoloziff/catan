@@ -20,7 +20,7 @@ with open("data/series.txt", 'r') as file:
     series = [[int(num) for num in line.split()] for line in file]
 
 click_sounds = ['bonk', 'boom', 'bruh', 'fart', 'pop', 'sicko mode', 'slap-ahh', 'shaq-boom']
-seven_sounds = ['la bela la va al fosso', 'nani', 'no god no', 'protegeme-senor', 'ooh']
+seven_sounds = ['la bela la va al fosso', 'nani', 'no god no', 'protegeme-senor', 'ooh', 'suspence']
 
 cols = st.columns(7)
 for i in range(2):
