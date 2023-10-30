@@ -19,7 +19,7 @@ p_numbers = [int(n.strip()) for n in p_numbers]
 with open("data/series.txt", 'r') as file:
     series = [[int(num) for num in line.split()] for line in file]
 
-click_sounds = ['bonk', 'boom', 'bruh', 'fart', 'pop', 'sicko mode', 'slap-ahh']
+click_sounds = ['bonk', 'boom', 'bruh', 'fart', 'pop', 'sicko mode', 'slap-ahh', 'shaq-boom']
 seven_sounds = ['la bela la va al fosso', 'nani', 'no god no', 'protegeme-senor', 'ooh']
 
 cols = st.columns(7)
