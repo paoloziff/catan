@@ -19,7 +19,7 @@ p_numbers = [int(n.strip()) for n in p_numbers]
 with open("data/series.txt", 'r') as file:
     series = [[int(num) for num in line.split()] for line in file]
 
-click_sounds = ['bonk', 'boom', 'bruh', 'fart', 'pop', 'sicko mode', 'slap-ahh', 'shaq-boom']
+click_sounds = ['bonk', 'boom', 'bruh', 'fart', 'pop', 'sicko mode', 'slap-ahh', 'shaq-boom', 'indian-virus']
 seven_sounds = ['la bela la va al fosso', 'nani', 'no god no', 'protegeme-senor', 'ooh', 'suspence', 'goofy']
 
 cols = st.columns(7)
@@ -34,7 +34,7 @@ for i in range(2):
                     pass
                 elif n == 7:
                     autoplay_audio(np.random.choice(seven_sounds))
-                elif random.random() < 0.2:
+                elif random.random() < 0.25:
                     autoplay_audio(np.random.choice(click_sounds))
                 with open("data/data.txt", "a") as f:
                     f.write(f"{n}\n")
