@@ -12,9 +12,8 @@ cs[0].write('## Nel Catan ci vuole Culo')
 if cs[1].button('Reset'):
     pass
 
-with open("data/data.txt", "r") as f:
-    p_numbers = f.readlines()
-p_numbers = [int(n.strip()) for n in p_numbers]
+if 'numbers' not in st.session_state:
+    st.session_state['numbers'] = [3,4,4,5,5,5,6,6,6,6,7,7,7,7,7,8,8,8,8,9,9,9,10,10,11]
 
 with open("data/series.txt", 'r') as file:
     series = [[int(num) for num in line.split()] for line in file]
@@ -30,18 +29,14 @@ for i in range(2):
             if n == 1:
                 st.success("A'ncefalitico, guarda che non può uscì l'uno...")
             else:
-                if is_special(n, p_numbers, series):
+                if is_special(n, numbers, series):
                     pass
                 elif n == 7:
                     autoplay_audio(np.random.choice(seven_sounds))
                 elif random.random() < 0.25:
                     autoplay_audio(np.random.choice(click_sounds))
-                with open("data/data.txt", "a") as f:
-                    f.write(f"{n}\n")
+                st.session_state['numbers'].append(n)
 
-with open("data/data.txt", "r") as f:
-    numbers = f.readlines()
-numbers = [int(n.strip()) for n in numbers]
 if len(numbers) > 10:
     cols[6].write('# {:.0f}%'.format(get_p_value(numbers)*100))
 
