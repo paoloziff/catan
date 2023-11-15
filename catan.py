@@ -29,7 +29,7 @@ for i in range(2):
             if n == 1:
                 st.success("A'ncefalitico, guarda che non può uscì l'uno...")
             else:
-                if is_special(n, numbers, series):
+                if is_special(n, st.session_state['numbers'], series):
                     pass
                 elif n == 7:
                     autoplay_audio(np.random.choice(seven_sounds))
@@ -37,20 +37,14 @@ for i in range(2):
                     autoplay_audio(np.random.choice(click_sounds))
                 st.session_state['numbers'].append(n)
 
-if len(numbers) > 10:
-    cols[6].write('# {:.0f}%'.format(get_p_value(numbers)*100))
+if len(st.session_state['numbers']) > 10:
+    cols[6].write('# {:.0f}%'.format(get_p_value(st.session_state['numbers'])*100))
 
-st.pyplot(make_chart(numbers))
+st.pyplot(make_chart(st.session_state['numbers']))
 st.image('media/xlabels.png', use_column_width='auto')
 # Add a button to clear all the data
 if st.button("Clear All Data"):
     autoplay_audio('go again')
-    with open("data/data.txt", "w") as f:
-        f.write("")
-    with open("data/series.txt", 'w') as file:
-        for _ in range(35):  # for each of the 4 rows
-            numbers = [str(roll_two_dice()) for _ in range(3)]
-            file.write(' '.join(numbers) + '\n')
     st.success("All data has been cleared!")
 
 background_image("media/background.png")
