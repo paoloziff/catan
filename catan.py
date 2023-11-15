@@ -44,6 +44,7 @@ st.pyplot(make_chart(st.session_state['numbers']))
 st.image('media/xlabels.png', use_column_width='auto')
 # Add a button to clear all the data
 if st.button("Clear All Data"):
+    st.session_state['numbers'] = []
     autoplay_audio('go again')
     st.success("All data has been cleared!")
 
