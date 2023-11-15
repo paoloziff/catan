@@ -13,7 +13,7 @@ if cs[1].button('Reset'):
     pass
 
 if 'numbers' not in st.session_state:
-    st.session_state['numbers'] = [3,4,4,5,5,5,6,6,6,6,7,7,7,7,7,8,8,8,8,9,9,9,10,10,11]
+    st.session_state['numbers'] = [2,3,3,4,4,4,5,5,5,5,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,8,9,9,9,9,10,10,10,11,11,12]
 
 with open("data/series.txt", 'r') as file:
     series = [[int(num) for num in line.split()] for line in file]
